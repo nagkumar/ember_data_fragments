@@ -1,0 +1,10 @@
+Appending new eleminat to MF Array through button
+<ul>
+  {{#each model as |book|}}
+      <li>{{#link-to 'books.book' book}}{{{book.title}}}{{/link-to}}</li>
+    {{#each book.reviewsNag as |reviewNag|}}
+        <li>{{{reviewNag}}}</li>
+        <button {{action 'createReview' book.reviewsNag}}>Add Review</button>
+    {{/each}}
+  {{/each}}
+</ul>
